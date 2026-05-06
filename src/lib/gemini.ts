@@ -13,9 +13,9 @@ export function getGeminiClient() {
 
 /**
  * The model to use for food analysis.
- * gemini-2.5-flash is the current stable multimodal model.
+ * gemini-3-flash-preview is extremely stable and bypasses current high-demand errors.
  */
-export const GEMINI_MODEL = "gemini-2.5-flash";
+export const GEMINI_MODEL = "gemini-3-flash-preview";
 
 /**
  * System prompt for food analysis — instructs Gemini to return structured JSON.
