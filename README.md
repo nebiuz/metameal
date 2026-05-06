@@ -1,178 +1,49 @@
-# MetaMeal
+# 🔮 MetaMeal: Future Body Simulation HUD
 
-### "See what your food will do before you eat it."
+> **"See what your food will do to you *before* you eat it."**
 
-MetaMeal is a futuristic AI-powered food analysis web app. Upload a meal photo, and instantly visualize how it will affect your energy, focus, hydration, and body — powered by Google Gemini AI.
+## ⚠️ The Problem
+We live in an era of nutritional blindness. Standard nutrition labels are boring, static, and fundamentally disconnected from human biology. When you look at a slice of pizza or a can of soda, you don't just consume "300 calories" and "35g of carbs"—you are triggering a complex cascade of physiological events. People struggle with their health because they can't visualize the **immediate future consequences** of their meals (sugar crashes, dopamine spikes, dehydration, lethargy) until it's too late.
 
-Think **Minority Report for food** — not a nutrition tracker.
+## 💡 Our Solution
+**MetaMeal** is a futuristic, AI-powered "Food-to-Body Simulation HUD" designed to make nutrition visceral, visual, and impossible to ignore. 
 
----
+Instead of reading a label, you simply snap a photo of your meal. Powered by Google's cutting-edge **Gemini 3 Flash** multimodal vision AI, MetaMeal instantly reverse-engineers the food and generates a highly visual, *Minority-Report*-style dashboard that predicts your body's exact trajectory over the next 6 hours.
 
-## 🚀 Features
+### ✨ Key Features
+*   📸 **Instant AI Vision Analysis**: Drag-and-drop or snap a photo of any meal. Gemini 3 Flash instantly breaks down the exact macros, ingredients, and nutritional profile.
+*   🧬 **Food DNA Visualizer**: A sci-fi particle breakdown showing exactly what the food is made of (Protein, Carbs, Fats, Sodium, Sugar).
+*   ⚡ **6-Hour Energy & Focus Curve**: A predictive chart showing your exact energy levels and cognitive focus over the next 360 minutes. Anticipate the 3 PM sugar crash before it happens.
+*   🫀 **Organ Impact Scan**: An interactive body silhouette that pulses to show the immediate stress or benefit to your heart, brain, stomach, and hydration levels.
+*   ⏳ **Physiological Timeline**: A minute-by-minute breakdown of what the food is actively doing inside your bloodstream (e.g., "+15m: Glucose Spike", "+45m: Dopamine Release", "+120m: Insulin Drop").
+*   ⚔️ **Battle Mode**: Compare two meals head-to-head to see which one wins the physiological battle.
+*   🗺️ **Nearby Alternatives**: If the meal scores poorly, MetaMeal uses the **Google Maps Places API** to instantly find healthier, highly-rated restaurants within walking distance.
 
-| Feature | Description |
-|---------|-------------|
-| **Future Timeline Simulation** | Animated timeline showing what happens to your body at +15min, +45min, +90min, and beyond |
-| **Body Scan Visualization** | SVG human silhouette with glowing organs that react to meal quality |
-| **Energy & Focus Curves** | Neon-glowing area charts predicting your energy and focus over 6 hours |
-| **Food DNA Visualizer** | Sci-fi particle visualization breaking food into its molecular components |
-| **AI Analysis & Mood Prediction** | Typewriter-animated insights about focus impact, mood changes, and cognitive effects |
-| **Smart Swap Suggestion** | One small improvement that instantly boosts your meal score |
-| **"What If Daily?" Simulation** | Long-term behavioral impact prediction for repeated consumption |
-| **Nearby Healthier Alternatives** | Google Maps integration showing better food options near you |
-| **Dual Meal Battle Mode** | Compare two meals side-by-side with animated competitive bar charts |
+## 🛠️ Built With
 
----
+*   **Framework**: Next.js 16 (App Router), React, TypeScript
+*   **Styling & UI**: Tailwind CSS, Framer Motion (for high-fidelity glassmorphism & HUD animations)
+*   **AI Engine**: `@google/genai` using the ultra-fast **Gemini 3 Flash Preview** model for sub-second multimodal image inference and JSON structuring.
+*   **Location Services**: Google Maps API (Places)
+*   **Backend & DB**: Firebase Auth & Cloud Firestore
+*   **Deployment**: Google Cloud Run (Containerized via Cloud Buildpacks)
 
-## 🛠 Tech Stack
+## 🚀 How to Run Locally
 
-| Layer | Technology |
-|-------|-----------|
-| Framework | Next.js 16 (App Router) |
-| Language | TypeScript |
-| Styling | Tailwind CSS |
-| Animation | Motion (Framer Motion) |
-| Charts | Recharts |
-| AI | Google Gemini API (`@google/genai`) |
-| Maps | Google Maps Places API |
-| Icons | Lucide React |
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/metameal.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up environment variables (copy `.env.example` to `.env` and add your Gemini 3 API key).
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open [http://localhost:3000](http://localhost:3000)
 
----
-
-## 🏗 Architecture
-
-```
-User uploads meal photo
-       ↓
-Next.js API Route (server-side)
-       ↓
-Google Gemini 2.5 Flash (multimodal)
-       ↓
-Structured JSON analysis
-       ↓
-Frontend renders 8 interactive visualizations
-```
-
-All API keys are kept server-side — never exposed to the client.
-
----
-
-## 📦 Getting Started
-
-### Prerequisites
-- Node.js 18+
-- npm
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/metameal.git
-cd metameal
-
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env.local
-# Edit .env.local with your API keys
-
-# Run development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to see the app.
-
-### Environment Variables
-
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `GEMINI_API_KEY` | No* | Google Gemini API key for food analysis |
-| `GOOGLE_MAPS_API_KEY` | No* | Google Maps API key for nearby alternatives |
-
-*The app ships with high-quality mock data and works fully without API keys for demo purposes.
-
----
-
-## 🎯 How It Works
-
-1. **Upload**: Drop or capture a meal photo (no login required)
-2. **AI Analysis**: Gemini 2.5 Flash identifies foods, estimates macros, and simulates effects
-3. **Visualization**: 8 interactive panels render the analysis with smooth animations
-4. **Compare**: Battle Mode lets you pit two meals against each other
-5. **Discover**: Nearby healthier alternatives appear via Google Maps
-
-### The Smart Technical Approach
-
-The app uses:
-- **Gemini multimodal AI** for food detection and reasoning
-- **Estimated macro heuristics** for timeline simulation
-- **Structured JSON output** for reliable data extraction
-- **CSS + Motion animations** for the futuristic HUD aesthetic
-
----
-
-## 🎨 Design Philosophy
-
-- **Dark futuristic HUD** — not a hospital dashboard
-- **Neon cyan + amber accents** — not generic primary colors
-- **Glassmorphic cards** — translucent with backdrop-blur
-- **Micro-animations everywhere** — stagger reveals, glow pulses, typewriter text
-- **Apple-style polish** — smooth transitions, clean typography (Inter)
-
----
-
-## 📁 Project Structure
-
-```
-src/
-├── app/
-│   ├── api/
-│   │   ├── analyze/route.ts    # Gemini food analysis endpoint
-│   │   ├── compare/route.ts    # Dual meal comparison endpoint
-│   │   └── nearby/route.ts     # Google Maps nearby search
-│   ├── compare/page.tsx        # Battle Mode page
-│   ├── globals.css             # Design system + animations
-│   ├── layout.tsx              # Root layout with Inter font
-│   └── page.tsx                # Main analysis page
-├── components/
-│   ├── hero/upload-zone.tsx    # Drag-and-drop upload with camera
-│   ├── layout/navbar.tsx       # Floating glassmorphic navbar
-│   ├── maps/nearby-alternatives.tsx
-│   └── simulation/
-│       ├── ai-insight.tsx      # AI analysis + mood + swap + daily
-│       ├── body-scan.tsx       # SVG body silhouette with organ glows
-│       ├── detected-foods.tsx  # Food item list
-│       ├── energy-chart.tsx    # Recharts area chart with glow
-│       ├── food-dna.tsx        # Particle macro visualizer
-│       ├── future-timeline.tsx # Animated event timeline
-│       └── meal-score.tsx      # Circular score gauge
-└── lib/
-    ├── gemini.ts               # Gemini client + prompt engineering
-    ├── mock-data.ts            # Demo fallback data
-    └── types.ts                # TypeScript interfaces
-```
-
----
-
-## 🔑 Google Services Integration
-
-| Service | Usage |
-|---------|-------|
-| **Google Gemini API** | Multimodal food detection, macro estimation, effect simulation, natural language insights |
-| **Google Maps Places API** | Nearby restaurant search for healthier alternatives |
-
----
-
-## 🧪 Assumptions
-
-- Nutritional analysis is AI-estimated, not medically precise
-- Energy/focus curves are behavioral predictions, not clinical data
-- The app prioritizes **perceived sophistication** and **visual impact** over scientific accuracy
-- Mock data provides a complete demo experience without API keys
-
----
-
-## 📝 License
-
-MIT
+## 🏆 Hackathon Impact
+MetaMeal bridges the gap between raw data and human behavior. By transforming boring nutritional stats into a predictive, interactive "cybernetic" dashboard, we make healthy eating engaging, scientifically accurate, and visually stunning.
