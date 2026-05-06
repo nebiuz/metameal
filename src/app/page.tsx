@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="pt-16">
+      <main className="pt-16" aria-label="Main Application Dashboard">
         {/* Hero / Upload Section */}
         <UploadZone
           onImageSelect={handleImageSelect}
